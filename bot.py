@@ -1,4 +1,5 @@
 import discord
+import os
 
 client = discord.Client()
 
@@ -15,10 +16,8 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith("등록"):
         await message.channel.send("등록되었습니다")
+        
+        
 
-
-client.run("NzQ3MjY3Nzg0ODU3MjIzMjI4.X0MZWw.cNNGEqBCwjcBClLnQVvLBJVYlSk")
-
-
-
-
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
